@@ -49,6 +49,7 @@ class MultichainClient
         $this->jsonRPCClient = new JsonRPCClient($url);
         $httpClient = $this->jsonRPCClient->getHttpClient();
         $httpClient->withHeaders($this->headers);
+        $httpClient->withTimeout($timeout);
         $this->jsonRPCClient->authentication($username, $password);
     }
 
